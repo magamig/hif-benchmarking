@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# project data
+data/GT/**
+data/HSI/**
+data/RGB/**
+data/SR/**
