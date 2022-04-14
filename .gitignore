@@ -130,6 +130,6 @@ dmypy.json
 
 # project data
 data/GT/**
-data/HSI/**
-data/RGB/**
+data/HS/**
+data/MS/**
 data/SR/**

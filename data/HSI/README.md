@@ -1,3 +1,0 @@
-# Downsampled Hyperspectral Images
-
-This directory contains the downsampled datasets. Each directory name within the datasets represents a distinct downsampling factor (e.g.: '4' means that the images were downsampled by a factor of 4). Each ```.mat``` file is composed by the ```hsi``` (```x*y*S```) image, with the ```x``` and ```y``` being ```1/DOWNSAMPLE_FACTOR``` of the original ground truth images.
