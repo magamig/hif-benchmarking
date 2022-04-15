@@ -1,0 +1,11 @@
+You can download the SISAL/SUNSAL software packges from Prof. Jose M. Bioucas Dias homepage.
+The download link is:
+http://www.lx.it.pt/~bioucas/code/unmixing_overview.zip
+
+You can simply extract the zip file and copy the following files in this directory:
+unmixing_overview\include\VCA.m
+unmixing_overview\include\hinge.m
+unmixing_overview\include\sisal.m
+unmixing_overview\include\soft.m
+unmixing_overview\include\soft_neg.m
+unmixing_overview\include\sunsal.m
