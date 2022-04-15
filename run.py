@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 
 DATASETS = ["CAVE"]
-METHODS = ["CNMF","FUSE"]
+METHODS = ["CNMF","FUSE","SFIM"]
 SCALES = [4]
 
 def matlabrun(cmd):
