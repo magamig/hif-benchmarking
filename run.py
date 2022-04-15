@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 
 DATASETS = ["CAVE"]
-METHODS = ["CNMF"]
+METHODS = ["CNMF","FUSE"]
 SCALES = [4]
 
 def matlabrun(cmd):
@@ -15,7 +15,7 @@ def matlabcmd(cmd):
 def get_paths(dataset, method, scale, img):
     hsi_path = f"data/HS/{dataset}/{scale}/{img}.mat"
     msi_path = f"data/MS/{dataset}/{img}.mat"
-    sr_path = f"data/SR/CNMF/{dataset}/{scale}"
+    sr_path = f"data/SR/{method}/{dataset}/{scale}"
     os.makedirs(sr_path, exist_ok = True)
     sri_path = f"{sr_path}/{img}.mat"
     return hsi_path, msi_path, sri_path
@@ -27,10 +27,11 @@ def main():
             for cs, scale in enumerate(SCALES, start=1):
                 for ci, img_path in enumerate(img_paths, start=1):
                     img = Path(img_path).stem
-                    print(f"dataset: {dataset} ({cd}/{len(DATASETS)}), method: {method} ({cm}/{len(METHODS)}), scale: {scale} ({cs}/{len(SCALES)}), img: {img}({ci}/{len(img_paths)})")
                     hsi_path, msi_path, sri_path = get_paths(dataset, method, scale, img)
-                    cmd = f'''hsi_path='{hsi_path}';msi_path='{msi_path}';sri_path='{sri_path}';{method}_run'''
-                    matlabcmd(cmd)
+                    print(f"dataset: {dataset} ({cd}/{len(DATASETS)}), method: {method} ({cm}/{len(METHODS)}), scale: {scale} ({cs}/{len(SCALES)}), img: {img}({ci}/{len(img_paths)})")
+                    if not os.path.exists(sri_path):
+                        cmd = f'''hsi_path='{hsi_path}';msi_path='{msi_path}';sri_path='{sri_path}';{method}_run'''
+                        matlabcmd(cmd)
 
 if __name__ == "__main__":
     main()
