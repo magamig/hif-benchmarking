@@ -10,7 +10,7 @@ def matlabrun(cmd):
     os.system(f'''/Applications/MATLAB_R20*.app/bin/matlab -nojvm -nodesktop -nodisplay -nosplash -batch "run('{cmd}'), exit;";''')
 
 def matlabcmd(cmd):
-    os.system(f'''/Applications/MATLAB_R20*.app/bin/matlab -nojvm -nodesktop -nodisplay -nosplash -batch "addpath(genpath('methods')); {cmd}; exit;"''')
+    os.system(f'''/Applications/MATLAB_R20*.app/bin/matlab -nojvm -nodesktop -nodisplay -nosplash -batch "addpath(genpath('.')); {cmd}; exit;"''')
 
 def get_paths(dataset, method, scale, img):
     hsi_path = f"data/HS/{dataset}/{scale}/{img}.mat"
