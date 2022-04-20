@@ -13,8 +13,7 @@ This work allows for an easy-to-use framework for testing and comparing existing
 Download and process dataset(s) (e.g.: CAVE):
 
 ```
-bash aux/CAVE/download.sh
-python aux/CAVE/process.py
+python aux/dataset_CAVE.py
 ```
 
 Post process dataset(s) to create MS image and downsampled HS image by a factor of 4 (or any other power of 2):

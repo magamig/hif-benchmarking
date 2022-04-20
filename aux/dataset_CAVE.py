@@ -1,4 +1,5 @@
 import glob
+import os
 from pathlib import Path
 
 import cv2
@@ -7,6 +8,13 @@ import scipy.io
 
 DATASET_PATH = 'data/GT/CAVE'
 
+
+os.system("wget https://www.cs.columbia.edu/CAVE/databases/multispectral/zip/complete_ms_data.zip")
+os.system("unzip complete_ms_data -d data/GT/aux/")
+os.system("mkdir -p data/GT/CAVE/")
+os.system("cp -r data/GT/aux/*/* data/GT/CAVE/")
+os.system("rm -r data/GT/aux/")
+os.system("rm complete_ms_data.zip")
 for hs_path in glob.iglob(f'{DATASET_PATH}/*/'):
     name = Path(hs_path).stem
     hsi = None
