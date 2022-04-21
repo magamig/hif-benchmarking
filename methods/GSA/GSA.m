@@ -41,7 +41,8 @@ for ii = 1 : size(HS,3), imageLR_LP0(:,:,ii) = imageLR_LP(:,:,ii) - mean2(imageL
 
 %%% Sintetic intensity
 imageHR0 = imageHR - mean2(imageHR);
-imageHR0 = imresize(imageHR0,size(HS(:,:,1)));
+[mm,nn,~] = size(HS);
+imageHR0 = imresize(imageHR0,[mm nn]);
 alpha(1,1,:) = estimation_alpha(cat(3,imageLR_LP0,ones(size(HS,1),size(HS,2))),imageHR0,'global');
 I = sum(cat(3,imageLR0,ones(size(imageLR,1),size(imageLR,2))) .* repmat(alpha,[size(imageLR,1) size(imageLR,2) 1]),3); 
 
