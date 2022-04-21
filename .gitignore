@@ -167,3 +167,4 @@ data/MS/**
 data/SR/**
 *.zip
 *.tgz
+*.gz

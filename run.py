@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 
 DATASETS = ["CAVE"]
-METHODS = ["CNMF","FUSE","SFIM","GSA","GLP","GSOMP","NSSR","SupResPALM","LTTR","HySure","MAPSMM","BayesianSparse"]
+METHODS = ["LTMR","CNMF","FUSE","SFIM","GSA","GLP","GSOMP","NSSR","SupResPALM","LTTR","HySure","MAPSMM","BayesianSparse"]
 SCALES = [4]
 
 def matlabrun(cmd):

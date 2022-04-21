@@ -40,6 +40,8 @@ You can edit ``run.py`` to customize the combinatory that you wish to process in
 | GSOMP | 2014 | [Matlab](http://staffhome.ecm.uwa.edu.au/~00053650/code.html) | [Akhtar, N., Shafait, F., & Mian, A. (2014, September). Sparse spatio-spectral representation for hyperspectral image super-resolution. In European conference on computer vision (pp. 63-78). Springer, Cham.](https://link.springer.com/content/pdf/10.1007/978-3-319-10584-0_5.pdf) |
 | BayesianSparse | 2015 | Matlab | [Akhtar, N., Shafait, F., & Mian, A. (2015). Bayesian sparse representation for hyperspectral image super resolution. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 3631-3640).](https://openaccess.thecvf.com/content_cvpr_2015/papers/Akhtar_Bayesian_Sparse_Representation_2015_CVPR_paper.pdf) |
 | LTTR | 2019 | [Matlab](https://github.com/renweidian/LTTR) | [Dian, R., Li, S., & Fang, L. (2019). Learning a low tensor-train rank representation for hyperspectral image super-resolution. IEEE transactions on neural networks and learning systems, 30(9), 2672-2683.](https://www.leyuanfang.com/wp-content/uploads/2022/02/2019-10-10.1109@TNNLS.2018.2885616.pdf) |
+| LTMR | 2019 | [Matlab](https://github.com/renweidian/LTMR) | [Dian, R., & Li, S. (2019). Hyperspectral image super-resolution via subspace-based low tensor multi-rank regularization. IEEE Transactions on Image Processing, 28(10), 5135-5146.](https://github.com/renweidian/LTMR/raw/master/TIP-2019.pdf) |
+
 
 *Pan-sharpening methods adapted to HS–MS fusion via hypersharpening. [^1]
 
