@@ -2,3 +2,4 @@ scipy==1.8.0
 numpy==1.19.2
 Pillow==9.0.1
 opencv-python==4.2.0
+sewar==0.4.5

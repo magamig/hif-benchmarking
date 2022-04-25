@@ -84,7 +84,7 @@ InvDI=1./(B2Sum(1:n_dr,1:n_dc,:)+repmat(Lambda,[n_dr n_dc 1]));
 
 
 
-for i=1:25
+for i=1:100
     disp("Iter " + int2str(i));
     HR_HSI3=mu*(V2+G2/(2*mu));
 C3=CCC+DTD\HR_HSI3;
