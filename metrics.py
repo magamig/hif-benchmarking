@@ -69,7 +69,7 @@ def main():
             for cs, scaling_path in enumerate(scaling_paths, start=1):
                 csv_path = f"{scaling_path}/metrics.csv"
                 scaling = Path(scaling_path).stem
-                
+
                 if not os.path.exists(csv_path):
                     csv = "name,rmse,psnr,psnrb,ssim,msssim,uqi,ergas,scc,rase,sam,vifp\n"
                     mat_paths = glob.glob(f"{scaling_path}/*.mat")

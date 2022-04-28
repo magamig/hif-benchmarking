@@ -4,7 +4,7 @@ import os
 from pathlib import Path
 
 DATASETS = ["CAVE"]
-ALL_METHODS = ["LTMR","CNMF","FUSE","SFIM","GSA","GLP","GSOMP","NSSR","SupResPALM","LTTR","HySure","MAPSMM","BayesianSparse"]
+ALL_METHODS = ["LTMR","CNMF","FUSE","SFIM","GSA","GLP","GSOMP","NSSR","SupResPALM","LTTR","HySure","MAPSMM","CSTF","BayesianSparse"]
 METHODS_PAPER_DIFF = [ # custom downsampling methods according to method
     # "LTMR", # OK 
     # "CNMF", # OK 

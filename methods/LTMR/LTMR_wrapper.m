@@ -3,7 +3,7 @@ function Out = LTMR_wrapper(HSI,MSI)
 % This is a wrapper function that calls the LTMR method [1].
 %
 % USAGE
-%       Out = LTTR_wrapper(HSI,MSI)
+%       Out = LTMR_wrapper(HSI,MSI)
 %
 % INPUT
 %       HSI   : Low-spatial-resolution HS image (rows2,cols2,bands2)
@@ -20,13 +20,8 @@ function Out = LTMR_wrapper(HSI,MSI)
 % Set the default values of the parametes
 %--------------------------------------------------------------
 
-Y_h = HSI;
-Y_h_bar = hyperConvert2D(Y_h);
-[m,n,L] = size(Y_h);
-
-Y = MSI;
-Y_bar = hyperConvert2D(Y);
-[M,N,l] = size(Y);
+[m,n,L] = size(HSI);
+[M,N,l] = size(MSI);
 
 sz = [M N];
 sf = M/n;
@@ -38,12 +33,12 @@ para.eta=1e-3;
 para.patchsize=7;
 para.p=10;
 
-[R,~] = estR(Y_h,Y);
+[R,~] = estR(HSI,MSI);
 for b = 1:l
-    msi = reshape(Y(:,:,b),M,N);
-    msi = msi - R(b,end);
-    msi(msi<0) = 0;
-    Y(:,:,b) = msi;
+    msi2 = reshape(MSI(:,:,b),M,N);
+    msi2 = msi2 - R(b,end);
+    msi2(msi2<0) = 0;
+    MSI(:,:,b) = msi2;
 end
 R = R(:,1:end-1);  
 F = R;
