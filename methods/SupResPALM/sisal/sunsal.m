@@ -73,7 +73,7 @@ function [z,res_p,res_d] = sunsal(M,y,varargin)
 %
 %
 % [1] J. Bioucas-Dias and M. Figueiredo, “Alternating direction algorithms
-% for constrained sparse regression: Application to hyperspectral unmixing? 
+% for constrained sparse regression: Application to hyperspectral unmixing”, 
 % in 2nd  IEEE GRSS Workshop on Hyperspectral Image and Signal 
 % Processing-WHISPERS'2010, Raykjavik, Iceland, 2010. 
 %
@@ -131,7 +131,7 @@ function [z,res_p,res_d] = sunsal(M,y,varargin)
 %
 %% -------------------------------------------------------------------------
 %
-% Copyright (July, 2009):        Jos?Bioucas-Dias (bioucas@lx.it.pt)
+% Copyright (July, 2009):        José Bioucas-Dias (bioucas@lx.it.pt)
 %
 % SUNSAL is distributed under the terms of
 % the GNU General Public License 2.0.
