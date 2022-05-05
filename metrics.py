@@ -13,7 +13,7 @@ from sewar.utils import _initial_check
 warnings.filterwarnings('ignore')
 
 GT_PATH = f'data/GT'
-SR_PATH = f'data/SR'
+SR_PATH = f'data/paper_SR'
 
 
 def ergas(GT,P,r=4,ws=8):

@@ -4,21 +4,43 @@ import os
 from pathlib import Path
 
 DATASETS = ["CAVE"]
-ALL_METHODS = ["LTMR","CNMF","FUSE","SFIM","GSA","GLP","GSOMP","NSSR","SupResPALM","LTTR","HySure","MAPSMM","CSTF","BayesianSparse"]
-METHODS_PAPER_DIFF = [ # custom downsampling methods according to method
-    # "LTMR", # OK 
-    # "CNMF", # OK 
+ALL_METHODS = [
+    "CNMF",
+    "FUSE",
+    "SFIM",
+    "GSA",
+    "GLP",
+    "GSOMP",
+    "NSSR",
+    "SupResPALM",
+    "LTMR",
+    "LTTR",
+    "HySure",
+    "MAPSMM",
+    # "CSTF", # unstable - needs fixes
+    # "BayesianSparse", # very slow
+    "CNNFUS",
+]
+# problems in papers methods:
+# - custom downsampling parameters according to method;
+# - use of the kernel blurring data as input (used to generate HS from GT)
+# - the use of fake matrix T as input (used to generate MS from GT)
+# - different downsampling techniques used (to generate HS from GT)
+# - some use noise some don't
+# - no usage of denoising of GT to increase SNRs of reference images [Naoto Yokoya review]
+METHODS_PAPER_DIFF = [
+    # "CNMF", # OK
     "FUSE", # uses matrix T and kernel info as input
-    # "SFIM", # OKOK
-    # "GSA", # OKOK
-    # "GLP", # OK
+    # "SFIM", # OK (via hypershaperning)
+    # "GSA", # OK
+    # "GLP", # OK (via hypershaperning)
     "GSOMP", # uses matrix T and downsample using matlab function "downsample"
     "NSSR", # uses matrix T and kernel info as input with custom parameters accordingly (uniform & gaussian kernels)
     "SupResPALM", # uses matrix T
-    "LTTR", # removes noisy bands beforehand
-    # "HySure", # removes noisy bands beforehand, uses matrix T and kernel info as input 
-    # "MAPSMM", # OKOK
-    # "BayesianSparse"
+    "LTMR", # uses matrix T & removes noisy bands beforehand
+    "LTTR", # uses matrix T & removes noisy bands beforehand
+    # "HySure", # OK but removes noisy bands beforehand
+    # "MAPSMM", # OK
 ]
 SCALES = [4]
 

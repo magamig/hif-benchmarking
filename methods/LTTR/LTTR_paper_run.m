@@ -1,4 +1,4 @@
-% gti_path="data/GT/CAVE/balloons_ms.mat";scale=4;sri_path="data/paper_SR/NSSR/CAVE/4/balloons_ms.mat";NSSR_paper_run;
+% gti_path="data/GT/CAVE/balloons_ms.mat";scale=4;sri_path="data/paper_SR/LTMR/CAVE/4/balloons_ms.mat";LTMR_paper_run;
 
 rand('seed',0);
 
