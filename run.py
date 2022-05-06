@@ -27,6 +27,8 @@ ALL_METHODS = [
 # - the use of fake matrix T as input (used to generate MS from GT)
 # - different downsampling techniques used (to generate HS from GT)
 # - some use noise some don't
+# - use different datasets
+# - existing comparison review only uses remote sensing datasets and are old 
 # - no usage of denoising of GT to increase SNRs of reference images [Naoto Yokoya review]
 METHODS_PAPER_DIFF = [
     # "CNMF", # OK
@@ -41,6 +43,7 @@ METHODS_PAPER_DIFF = [
     "LTTR", # uses matrix T & removes noisy bands beforehand
     # "HySure", # OK but removes noisy bands beforehand
     # "MAPSMM", # OK
+    "CNNFUS", # uses matrix T and kernel info as input (noise from demo not used)
 ]
 SCALES = [4]
 
