@@ -1,0 +1,24 @@
+net: "train_design.prototxt"
+
+#test_iter: 25
+#test_interval: 5000
+
+base_lr: 0.001
+momentum: 0.9
+weight_decay: 0.0001
+
+regularization_type: "graL2"
+
+type: "Adam"
+lr_policy: "multistep"
+gamma: 0.1
+stepvalue: 20000
+stepvalue: 23000
+
+clip_gradients: 1024
+
+display: 100
+max_iter: 10000
+snapshot: 500
+snapshot_prefix: "model/design/HSI-SR"
+solver_mode: GPU

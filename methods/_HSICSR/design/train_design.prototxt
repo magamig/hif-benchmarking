@@ -1,0 +1,512 @@
+name: "HSI-SR-design"
+layer {
+  name: "hdf5_train_data"
+  type: "HDF5Data"
+  top: "hrhsi"
+  top: "lrhsi"
+  include {
+    phase: TRAIN
+  }
+  hdf5_data_param {
+    source: "train/design/train.txt"
+    batch_size: 16
+    shuffle: 1
+  }
+}
+layer {
+  name: "design_hr"
+  type: "ReluConvolution"
+  bottom: "hrhsi"
+  top: "design_hr"
+  param {
+    name: "design"
+    lr_mult: 1
+    decay_mult: 100
+    decay_mult2: 1000
+  }
+  convolution_param {
+    num_output: 3
+    kernel_size: 1
+    stride: 1
+    bias_term: false
+    weight_filler {
+      type: "constant"
+      value: 0.0322580645161
+    }
+  }
+}
+layer {
+  name: "design_lr"
+  type: "ReluConvolution"
+  bottom: "lrhsi"
+  top: "design_lr"
+  param {
+    name: "design"
+    lr_mult: 1
+    decay_mult: 100
+    decay_mult2: 1000
+  }
+  convolution_param {
+    num_output: 3
+    kernel_size: 1
+    stride: 1
+    bias_term: false
+    weight_filler {
+      type: "constant"
+      value: 0.0322580645161
+    }
+  }
+}
+layer {
+  name: "nonlinear1_h"
+  type: "Convolution"
+  bottom: "design_hr"
+  top: "nonlinear1_h"
+  param {
+    name: "w1"
+    lr_mult: 1
+  }
+  param {
+    name: "b1"
+    lr_mult: 0.1
+  }
+  convolution_param {
+    num_output: 64
+    kernel_size: 1
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer {
+  name: "nonlinear1_h_relu"
+  type: "ReLU"
+  bottom: "nonlinear1_h"
+  top: "nonlinear1_h"
+  relu_param {
+    negative_slope: 0.05
+  }
+}
+layer {
+  name: "concat1_h"
+  type: "Concat"
+  bottom: "design_hr"
+  bottom: "nonlinear1_h"
+  top: "rgbnonlinear1_h"
+  concat_param {
+    axis: 1
+  }
+}
+layer {
+  name: "nonlinear2_h"
+  type: "Convolution"
+  bottom: "rgbnonlinear1_h"
+  top: "nonlinear2_h"
+  param {
+    name: "w2"
+    lr_mult: 1
+  }
+  param {
+    name: "b2"
+    lr_mult: 0.1
+  }
+  convolution_param {
+    num_output: 64
+    kernel_size: 1
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer {
+  name: "nonlinear2_h_relu"
+  type: "ReLU"
+  bottom: "nonlinear2_h"
+  top: "nonlinear2_h"
+  relu_param {
+    negative_slope: 0.05
+  }
+}
+layer {
+  name: "concat2_h"
+  type: "Concat"
+  bottom: "design_hr"
+  bottom: "nonlinear2_h"
+  top: "rgbnonlinear2_h"
+  concat_param {
+    axis: 1
+  }
+}
+layer {
+  name: "nonlinear3_h"
+  type: "Convolution"
+  bottom: "rgbnonlinear2_h"
+  top: "nonlinear3_h"
+  param {
+    name: "w3"
+    lr_mult: 1
+  }
+  param {
+    name: "b3"
+    lr_mult: 0.1
+  }
+  convolution_param {
+    num_output: 64
+    kernel_size: 1
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer {
+  name: "nonlinear3_h_relu"
+  type: "ReLU"
+  bottom: "nonlinear3_h"
+  top: "nonlinear3_h"
+  relu_param {
+    negative_slope: 0.05
+  }
+}
+layer {
+  name: "concat3_h"
+  type: "Concat"
+  bottom: "design_hr"
+  bottom: "nonlinear3_h"
+  top: "rgbnonlinear3_h"
+  concat_param {
+    axis: 1
+  }
+}
+layer {
+  name: "nonlinear4_h"
+  type: "Convolution"
+  bottom: "rgbnonlinear3_h"
+  top: "nonlinear4_h"
+  param {
+    name: "w4"
+    lr_mult: 1
+  }
+  param {
+    name: "b4"
+    lr_mult: 0.1
+  }
+  convolution_param {
+    num_output: 64
+    kernel_size: 1
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer {
+  name: "nonlinear4_h_relu"
+  type: "ReLU"
+  bottom: "nonlinear4_h"
+  top: "nonlinear4_h"
+  relu_param {
+    negative_slope: 0.05
+  }
+}
+layer {
+  name: "concat4_h"
+  type: "Concat"
+  bottom: "design_hr"
+  bottom: "nonlinear4_h"
+  top: "rgbnonlinear4_h"
+  concat_param {
+    axis: 1
+  }
+}
+layer {
+  name: "nonlinear_h"
+  type: "Convolution"
+  bottom: "rgbnonlinear4_h"
+  top: "nonlinear_h"
+  param {
+    name: "w"
+    lr_mult: 1
+  }
+  param {
+    name: "b"
+    lr_mult: 0.1
+  }
+  convolution_param {
+    num_output: 31
+    kernel_size: 1
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer {
+  name: "nonlinear_h_relu"
+  type: "ReLU"
+  bottom: "nonlinear_h"
+  top: "nonlinear_h"
+  relu_param {
+    negative_slope: 0.05
+  }
+}
+layer {
+  name: "pooling_hsi"
+  type: "Pooling"
+  bottom: "nonlinear_h"
+  top: "recon_lrhsi"
+  pooling_param {
+    pool: AVE
+    kernel_size: 32
+    stride: 32
+  }
+}
+layer {
+  name: "nonlinear1_l"
+  type: "Convolution"
+  bottom: "design_lr"
+  top: "nonlinear1_l"
+  param {
+    name: "w1"
+    lr_mult: 1
+  }
+  param {
+    name: "b1"
+    lr_mult: 0.1
+  }
+  convolution_param {
+    num_output: 64
+    kernel_size: 1
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer {
+  name: "nonlinear1_l_relu"
+  type: "ReLU"
+  bottom: "nonlinear1_l"
+  top: "nonlinear1_l"
+  relu_param {
+    negative_slope: 0.05
+  }
+}
+layer {
+  name: "concat1_l"
+  type: "Concat"
+  bottom: "design_lr"
+  bottom: "nonlinear1_l"
+  top: "rgbnonlinear1_l"
+  concat_param {
+    axis: 1
+  }
+}
+layer {
+  name: "nonlinear2_l"
+  type: "Convolution"
+  bottom: "rgbnonlinear1_l"
+  top: "nonlinear2_l"
+  param {
+    name: "w2"
+    lr_mult: 1
+  }
+  param {
+    name: "b2"
+    lr_mult: 0.1
+  }
+  convolution_param {
+    num_output: 64
+    kernel_size: 1
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer {
+  name: "nonlinear2_l_relu"
+  type: "ReLU"
+  bottom: "nonlinear2_l"
+  top: "nonlinear2_l"
+  relu_param {
+    negative_slope: 0.05
+  }
+}
+layer {
+  name: "concat2_l"
+  type: "Concat"
+  bottom: "design_lr"
+  bottom: "nonlinear2_l"
+  top: "rgbnonlinear2_l"
+  concat_param {
+    axis: 1
+  }
+}
+layer {
+  name: "nonlinear3_l"
+  type: "Convolution"
+  bottom: "rgbnonlinear2_l"
+  top: "nonlinear3_l"
+  param {
+    name: "w3"
+    lr_mult: 1
+  }
+  param {
+    name: "b3"
+    lr_mult: 0.1
+  }
+  convolution_param {
+    num_output: 64
+    kernel_size: 1
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer {
+  name: "nonlinear3_l_relu"
+  type: "ReLU"
+  bottom: "nonlinear3_l"
+  top: "nonlinear3_l"
+  relu_param {
+    negative_slope: 0.05
+  }
+}
+layer {
+  name: "concat3_l"
+  type: "Concat"
+  bottom: "design_lr"
+  bottom: "nonlinear3_l"
+  top: "rgbnonlinear3_l"
+  concat_param {
+    axis: 1
+  }
+}
+layer {
+  name: "nonlinear4_l"
+  type: "Convolution"
+  bottom: "rgbnonlinear3_l"
+  top: "nonlinear4_l"
+  param {
+    name: "w4"
+    lr_mult: 1
+  }
+  param {
+    name: "b4"
+    lr_mult: 0.1
+  }
+  convolution_param {
+    num_output: 64
+    kernel_size: 1
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer {
+  name: "nonlinear4_l_relu"
+  type: "ReLU"
+  bottom: "nonlinear4_l"
+  top: "nonlinear4_l"
+  relu_param {
+    negative_slope: 0.05
+  }
+}
+layer {
+  name: "concat4_l"
+  type: "Concat"
+  bottom: "design_lr"
+  bottom: "nonlinear4_l"
+  top: "rgbnonlinear4_l"
+  concat_param {
+    axis: 1
+  }
+}
+layer {
+  name: "nonlinear_l"
+  type: "Convolution"
+  bottom: "rgbnonlinear4_l"
+  top: "nonlinear_l"
+  param {
+    name: "w"
+    lr_mult: 1
+  }
+  param {
+    name: "b"
+    lr_mult: 0.1
+  }
+  convolution_param {
+    num_output: 31
+    kernel_size: 1
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer {
+  name: "nonlinear_l_relu"
+  type: "ReLU"
+  bottom: "nonlinear_l"
+  top: "nonlinear_l"
+  relu_param {
+    negative_slope: 0.05
+  }
+}
+layer {
+  name: "loss_h1"
+  type: "EuclideanLoss"
+  bottom: "recon_lrhsi"
+  bottom: "lrhsi"
+  top: "loss_h1"
+  loss_weight: 50
+  include {
+    phase: TRAIN
+  }
+}
+layer {
+  name: "loss_l1"
+  type: "EuclideanLoss"
+  bottom: "nonlinear_l"
+  bottom: "lrhsi"
+  top: "loss_l1"
+  loss_weight: 50
+  include {
+    phase: TRAIN
+  }
+}

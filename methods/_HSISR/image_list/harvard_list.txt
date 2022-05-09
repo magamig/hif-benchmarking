@@ -1,0 +1,7 @@
+The split for Harvard dataset
+
+Labeled images: img1, imga6, imgb4, imgb8, imgc5, imgd3, imge0, imge5, imgf3, imgf8
+
+Unlabeled images: img2, imga5, imgb1, imgb5, imgb7, imgc2, imgc7, imgc9, imgd7, imge2, imge4, imgf1, imgf4, imgf7, imgh1, imga2, imgb0, imgb2, imgb6, imgc1, imgc4, imgc8, imgd4, imgd9, imge3, imge7, imgf2, imgf6, imgh0, imgh2
+
+Test images: imga1, imga7, imgb3, imgb9, imgd2, imgd8, imge1, imge6, imgf5, imgh3

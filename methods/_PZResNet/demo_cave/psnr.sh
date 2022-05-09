@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=7 python3 Overall.py --envname $(date +20%y-%m-%d-%H-%M-%S) <<

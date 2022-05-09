@@ -1,0 +1,66 @@
+N_start=1;
+figure(10);
+plot(tau_d_set(N_start:end),RMSE_fusion1.Hardie*ones(length(tau_d_set(N_start:end)),1),...
+         tau_d_set(N_start:end),RMSE_fusion1.Zhang*ones(length(tau_d_set(N_start:end)),1),...
+         tau_d_set(N_start:end),RMSE_fusion1.CNMF*ones(length(tau_d_set(N_start:end)),1),...
+         tau_d_set(N_start:end),RMSE_fusion1.MCMC*ones(length(tau_d_set(N_start:end)),1),...
+         tau_d_set(N_start:end),RMSE_DL(N_start:end),... %RMSE_set
+        'o-','LineWidth',3);
+xlim([tau_d_set(N_start) tau_d_set(end)]); ylim([min(RMSE_DL)*0.999 RMSE_fusion1.CNMF*1.01]);
+legend('MAP','Wavelet','CNMF','HMC','Proposed');
+% xlabel('$\bf{\lambda}_d/s_h^2$','Interpreter','LaTex','fontsize',30,'fontweight','b');ylabel('RMSE','fontsize',30,'fontweight','b');
+xlabel('$\bf{\lambda}$','Interpreter','LaTex','fontsize',30,'fontweight','b');ylabel('RMSE','fontsize',30,'fontweight','b');
+set(gca,'YTickMode','manual','Fontsize',20);
+print(figure(10),'-depsc','D:\qwei2\Bayesian_fusion\figures\RMSE_taud.eps')
+
+figure(11);
+plot(tau_d_set(N_start:end),Q1.Hardie*ones(length(tau_d_set(N_start:end)),1),...
+         tau_d_set(N_start:end),Q1.Zhang*ones(length(tau_d_set(N_start:end)),1),...
+         tau_d_set(N_start:end),Q1.CNMF*ones(length(tau_d_set(N_start:end)),1),...
+         tau_d_set(N_start:end),Q1.MCMC*ones(length(tau_d_set(N_start:end)),1),...
+         tau_d_set(N_start:end),Q_DL(N_start:end),... %mean_Q
+        'o-','LineWidth',3);
+xlim([tau_d_set(N_start) tau_d_set(end)]);ylim([Q1.CNMF*0.9999 max(Q_DL) ]);
+% xlabel('$\bf{\lambda}_d/s_h^2$','Interpreter','LaTex','fontsize',30,'fontweight','b');ylabel('UIQI','fontsize',30,'fontweight','b');
+xlabel('$\bf{\lambda}$','Interpreter','LaTex','fontsize',30,'fontweight','b');ylabel('UIQI','fontsize',30,'fontweight','b');
+set(gca,'YTickMode','manual','Fontsize',20);
+print(figure(11),'-depsc','D:\qwei2\Bayesian_fusion\figures\UIQI_taud.eps')
+
+figure(12);
+plot(tau_d_set(N_start:end),SAM_m1.Hardie*ones(length(tau_d_set(N_start:end)),1),...
+         tau_d_set(N_start:end),SAM_m1.Zhang*ones(length(tau_d_set(N_start:end)),1),...
+         tau_d_set(N_start:end),SAM_m1.CNMF*ones(length(tau_d_set(N_start:end)),1),...
+         tau_d_set(N_start:end),SAM_m1.MCMC*ones(length(tau_d_set(N_start:end)),1),...
+         tau_d_set(N_start:end),SAM_DL(N_start:end),...%SAM_set
+        'o-','LineWidth',3);
+xlim([tau_d_set(N_start) tau_d_set(end)]);ylim([min(SAM_DL) SAM_m1.CNMF*1.01]);
+% xlabel('$\bf{\lambda}_d/s_h^2$','Interpreter','LaTex','fontsize',30,'fontweight','b');ylabel('SAM','fontsize',30,'fontweight','b');
+xlabel('$\bf{\lambda}$','Interpreter','LaTex','fontsize',30,'fontweight','b');ylabel('SAM','fontsize',30,'fontweight','b');
+set(gca,'YTickMode','manual','Fontsize',20);
+print(figure(12),'-depsc','D:\qwei2\Bayesian_fusion\figures\SAM_taud.eps')
+
+figure(13);
+plot(tau_d_set(N_start:end),ERGAS1.Hardie*ones(length(tau_d_set(N_start:end)),1),...
+         tau_d_set(N_start:end),ERGAS1.Zhang*ones(length(tau_d_set(N_start:end)),1),...
+         tau_d_set(N_start:end),ERGAS1.CNMF*ones(length(tau_d_set(N_start:end)),1),...
+         tau_d_set(N_start:end),ERGAS1.MCMC*ones(length(tau_d_set(N_start:end)),1),...
+         tau_d_set(N_start:end),ERGAS_DL(N_start:end),...%ERGAS_set
+        'o-','LineWidth',3);
+xlim([tau_d_set(N_start) tau_d_set(end)]);ylim([min(ERGAS_DL) ERGAS1.CNMF*1.01]);
+% xlabel('$\bf{\lambda}_d/s_h^2$','Interpreter','LaTex','fontsize',30,'fontweight','b');ylabel('ERGAS','fontsize',30,'fontweight','b');
+xlabel('$\bf{\lambda}$','Interpreter','LaTex','fontsize',30,'fontweight','b');ylabel('ERGAS','fontsize',30,'fontweight','b');
+set(gca,'YTickMode','manual','Fontsize',20);
+print(figure(13),'-depsc','D:\qwei2\Bayesian_fusion\figures\ERGAS_taud.eps')
+
+figure(14);
+plot(tau_d_set(N_start:end),DD1.Hardie*ones(length(tau_d_set(N_start:end)),1),...
+         tau_d_set(N_start:end),DD1.Zhang*ones(length(tau_d_set(N_start:end)),1),...
+         tau_d_set(N_start:end),DD1.CNMF*ones(length(tau_d_set(N_start:end)),1),...
+         tau_d_set(N_start:end),DD1.MCMC*ones(length(tau_d_set(N_start:end)),1),...
+         tau_d_set(N_start:end),DD_DL(N_start:end),...%D_dist_set
+        'o-','LineWidth',3);
+xlim([tau_d_set(N_start) tau_d_set(end)]);ylim([min(DD_DL) DD1.CNMF*1.01]);
+% xlabel('$\bf{\lambda}_d/s_h^2$','Interpreter','LaTex','fontsize',30,'fontweight','b');ylabel('DD','fontsize',30,'fontweight','b');
+xlabel('$\bf{\lambda}$','Interpreter','LaTex','fontsize',30,'fontweight','b');ylabel('DD','fontsize',30,'fontweight','b');
+set(gca,'YTickMode','manual','Fontsize',20);
+print(figure(14),'-depsc','D:\qwei2\Bayesian_fusion\figures\DD_taud.eps')

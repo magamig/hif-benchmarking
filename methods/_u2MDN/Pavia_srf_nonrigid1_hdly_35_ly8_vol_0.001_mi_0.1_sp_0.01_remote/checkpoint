@@ -1,0 +1,6 @@
+model_checkpoint_path: "epoch_4999_sam_0.902_rmse_0.001.ckpt"
+all_model_checkpoint_paths: "epoch_2999_sam_1.164_rmse_0.0019.ckpt"
+all_model_checkpoint_paths: "epoch_3499_sam_1.331_rmse_0.0024.ckpt"
+all_model_checkpoint_paths: "epoch_3999_sam_1.036_rmse_0.0018.ckpt"
+all_model_checkpoint_paths: "epoch_4499_sam_1.12_rmse_0.0017.ckpt"
+all_model_checkpoint_paths: "epoch_4999_sam_0.902_rmse_0.001.ckpt"

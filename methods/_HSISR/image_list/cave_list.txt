@@ -1,0 +1,7 @@
+The split for CAVE dataset:
+
+labeled images: balloons_ms, chart_and_stuffed_toy_ms, egyptian_statue_ms, fake_and_real_peppers_ms, hairs_ms 
+
+unlabeled images: beads_ms, cd_ms, clay_ms, cloth_ms, face_ms, fake_and_real_beers_ms, fake_and_real_food_ms, fake_and_real_lemon_slices_ms, fake_and_real_lemons_ms, fake_and_real_strawberries_ms, fake_and_real_sushi_ms, fake_and_real_tomatoes_ms, feathers_ms, flowers_ms, glass_tiles_ms
+
+test images: jelly_beans_ms, paints_ms, pompoms_ms, real_and_fake_peppers_ms, stuffed_toys_ms, thread_spools_ms, oil_painting_ms, photo_and_face_ms, real_and_fake_apples_ms, sponges_ms, superballs_ms, watercolors_ms
