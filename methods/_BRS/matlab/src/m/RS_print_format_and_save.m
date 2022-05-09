@@ -1,0 +1,16 @@
+ylim([yticks(1),yticks(end)]);
+xlim(xlimits);
+set(gca,'XTick', xticks);
+set(gca,'XTickLabels', xLabels);
+set(gca,'YTick', yticks);
+set(gca,'YTickLabels', yLabels);
+ylabel(ylab,'Interpreter','latex');
+xlabel(xlab,'Interpreter','latex');
+set(gca, 'YScale', 'log');
+set(gca, 'XScale', 'log');
+grid on;
+set(gca,'FontSize',fontsize);
+fig = gcf;
+fig.PaperUnits = 'inches';
+fig.PaperPosition = [0 0 cmx cmy];
+print(hFig,[folder_summary, filesep, testcase, '__', param, '__', filename],'-dpng','-r300');

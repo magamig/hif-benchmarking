@@ -1,0 +1,12 @@
+numpy==1.19.1
+scikit-image==0.17.2
+matplotlib==3.3.1
+joblib==0.15.1
+pyparsing==2.4.7
+scipy==1.4.1
+gdown==3.13.0
+pytest==6.2.4
+
+
+
+
