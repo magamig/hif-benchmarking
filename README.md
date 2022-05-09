@@ -1,12 +1,12 @@
-# Multispectral and Hyperspectral Image Fusion Benchmarking
+# Hyperspectral Image Fusion Benchmarking
 
-**Comparison the multispectral (MS) and hyperspectral (HS) image fusion techniques used for the spatial resolution enhancement of HS images.**
+**Comparison of the multispectral (MS) and hyperspectral (HS) image fusion techniques used for the spatial resolution enhancement of HS images.**
 
 ![diagram](aux/diagram.png)
 
 Existing hyperspectral imaging systems produce images that lack spatial resolution due to hardware limitations. Even with the proven efficacy of this technology in several computer vision tasks, the aforementioned limitation obstructs its applicability. Contrarily, conventional RGB images have a much larger resolution with just three spectra. Since the issue of low resolution images arises from hardware limitations, there have been several developments in software-based approaches to improve the spatial resolution of hyperspectral images.
 
-This work allows for an **easy-to-use framework for testing and comparing existing hyperspectral image fusion methods** for spatial resolution enhancement.
+This work allows for an **easy-to-use framework for testing and comparing existing hyperspectral image fusion (HIF) methods** for spatial resolution enhancement.
 
 ## Content
 
