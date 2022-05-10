@@ -14,7 +14,8 @@ GT_PATH = f'data/GT/{DATASET}'
 MS_PATH = f'data/MS/{DATASET}'
 HS_PATH = f'data/HS/{DATASET}/{DOWNSAMPLE}'
 
-#os.system("wget https://www.cs.columbia.edu/CAVE/databases/multispectral/zip/complete_ms_data.zip")
+if not os.path.exists("complete_ms_data.zip"):
+    os.system("wget https://www.cs.columbia.edu/CAVE/databases/multispectral/zip/complete_ms_data.zip")
 os.system("unzip complete_ms_data -d data/GT/aux/")
 os.makedirs(GT_PATH, exist_ok = True)
 os.system(f"cp -r data/GT/aux/*/* {GT_PATH}/")

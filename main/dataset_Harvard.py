@@ -19,8 +19,10 @@ T = np.array([
     [0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.001,0.003,0.010,0.012,0.013,0.022,0.020,0.020,0.018,0.017,0.016,0.016,0.014,0.014,0.013]
 ]).T
 
-#os.system("wget http://vision.seas.harvard.edu/hyperspec/d2x5g3/CZ_hsdbi.tgz")
-#os.system("wget http://vision.seas.harvard.edu/hyperspec/d2x5g3/CZ_hsdb.tgz")
+if not os.path.exists("CZ_hsdbi.tgz"):
+    os.system("wget http://vision.seas.harvard.edu/hyperspec/d2x5g3/CZ_hsdbi.tgz")
+if not os.path.exists("CZ_hsdbi.tgz"):
+    os.system("wget http://vision.seas.harvard.edu/hyperspec/d2x5g3/CZ_hsdb.tgz")
 os.system("tar -xvzf CZ_hsdbi.tgz -C data/GT/")
 os.system("tar -xvzf CZ_hsdb.tgz -C data/GT/")
 os.makedirs(GT_PATH, exist_ok = True)

@@ -42,10 +42,36 @@ python main/metrics.py
 
 ## Datasets
 
-| Method | Year | Resolution | Download | Paper |
-| --- | --- | --- | --- | --- |
-| [CAVE](https://www.cs.columbia.edu/CAVE/databases/multispectral/) | 2008 | 512x512x31 | [URL](https://www.cs.columbia.edu/CAVE/databases/multispectral/zip/complete_ms_data.zip) | [Yasuma, F., Mitsunaga, T., Iso, D., & Nayar, S. K. (2010). Generalized assorted pixel camera: postcapture control of resolution, dynamic range, and spectrum. IEEE transactions on image processing, 19(9), 2241-2253.](http://www1.cs.columbia.edu/CAVE/publications/pdfs/Yasuma_TR08.pdf) |
-| [Harvard](http://vision.seas.harvard.edu/hyperspec/index.html) | 2011 | 1040x1392x31 | [URL](http://vision.seas.harvard.edu/hyperspec/d2x5g3/) | [Chakrabarti, A., & Zickler, T. (2011, June). Statistics of real-world hyperspectral images. In CVPR 2011 (pp. 193-200). IEEE.](http://vision.seas.harvard.edu/hyperspec/CZ_hss.pdf) |
+Compilation of publically available hyperspectral datasets. The datasets in bold can be automatically downloaded and processed using the respective script ```main/dataset_{name}.py``` as per the instructions above.
+
+| Dataset | Year | Qty | Resolution* | Download | Paper |
+| --- | --- | --- | --- | --- | --- |
+| **[CAVE](https://www.cs.columbia.edu/CAVE/databases/multispectral/)** | 2008 | 32 | 512x512x31 [400,700]nm | [All](https://www.cs.columbia.edu/CAVE/databases/multispectral/zip/complete_ms_data.zip) | [Yasuma, F., Mitsunaga, T., Iso, D., & Nayar, S. K. (2010). Generalized assorted pixel camera: postcapture control of resolution, dynamic range, and spectrum. IEEE transactions on image processing, 19(9), 2241-2253.](http://www1.cs.columbia.edu/CAVE/publications/pdfs/Yasuma_TR08.pdf) |
+| **[Harvard](http://vision.seas.harvard.edu/hyperspec/index.html)** | 2011 | 77 | 1040x1392x31 [420,720]nm | [All](http://vision.seas.harvard.edu/hyperspec/d2x5g3/) | [Chakrabarti, A., & Zickler, T. (2011, June). Statistics of real-world hyperspectral images. In CVPR 2011 (pp. 193-200). IEEE.](http://vision.seas.harvard.edu/hyperspec/CZ_hss.pdf) |
+| [NUS](https://sites.google.com/site/hyperspectralcolorimaging/dataset/general-scenes)** | 2014 | 88 | ?×?x31 [400,700]nm | - | [Nguyen, R. M., Prasad, D. K., & Brown, M. S. (2014, September). Training-based spectral reconstruction from a single RGB image. In European Conference on Computer Vision (pp. 186-201). Springer, Cham.](https://link.springer.com/content/pdf/10.1007/978-3-319-10584-0_13.pdf) |
+| [iCVL](http://icvl.cs.bgu.ac.il/hyperspectral/)** | 2016 | 201 | 1392×1300x519 [400,1000]nm | [All](http://icvl.cs.bgu.ac.il/hyperspectral/) | [Arad, B., & Ben-Shahar, O. (2016, October). Sparse recovery of hyperspectral signal from natural RGB images. In European Conference on Computer Vision (pp. 19-34). Springer, Cham.](http://link.springer.com/chapter/10.1007/978-3-319-46478-7_2) |
+
+Below, we list the publically available hyperspectral remote sensing scenes. The ones in italic were collected by the [GIC from EHU](http://www.ehu.eus/ccwintco/index.php/Hyperspectral_Remote_Sensing_Scenes).
+
+| Dataset | Year | Qty | Resolution* | Download | Paper |
+| --- | --- | --- | --- | --- | --- |
+| *[Indian Pines](https://engineering.purdue.edu/~biehl/MultiSpec/hyperspectral.html)*** | 1992 | 1 | 145x145x220 [400,2500]nm | [URL](http://www.ehu.eus/ccwintco/uploads/2/22/Indian_pines.mat) | [Baumgardner, M. F., Biehl, L. L., & Landgrebe, D. A. (2015). 220 band aviris hyperspectral image data set: June 12, 1992 indian pine test site 3. Purdue University Research Repository, 10, R7RX991C.](https://purr.purdue.edu/publications/1947/1) / [AVIRIS NASA](http://aviris.jpl.nasa.gov/). |
+| *[Kennedy Space Center](https://aviris.jpl.nasa.gov/)*** | 1996 | 1 | 512x614x176 [400,2500]nm*** | [URL](http://www.ehu.es/ccwintco/uploads/2/26/KSC.mat) | [AVIRIS NASA](http://aviris.jpl.nasa.gov/). |
+| *[Salinas](https://aviris.jpl.nasa.gov/)*** | 1998 | 1 | 512x217x224 [400,2500]nm*** | [URL](http://www.ehu.eus/ccwintco/uploads/f/f1/Salinas.mat) | [AVIRIS NASA](http://aviris.jpl.nasa.gov/). |
+| *[Cuprite](https://aviris.jpl.nasa.gov/data/free_data.html)*** | 1998 | 1 | 512x614x224 [400,2500]nm*** | [URL](http://www.ehu.eus/ccwintco/uploads/7/7d/Cuprite_f970619t01p02_r02_sc03.a.rfl.mat) | [AVIRIS NASA](http://aviris.jpl.nasa.gov/). |
+| *[Pavia](http://www.ehu.eus/ccwintco/index.php/Hyperspectral_Remote_Sensing_Scenes)*** | 2008 | 2 | ?x?x103 [430,860]nm | [Centre](http://www.ehu.eus/ccwintco/uploads/e/e3/Pavia.mat) [University](http://www.ehu.eus/ccwintco/uploads/e/ee/PaviaU.mat) | Dataset provided by [Prof. Paolo Gamba](http://tlclab.unipv.it/sito_tlc/people.do?id=pgamba) from the [Telecommunications and Remote Sensing Laboratory, Pavia university (Italy)](http://tlclab.unipv.it/). |
+| *[Botswana](http://www.ehu.eus/ccwintco/index.php/Hyperspectral_Remote_Sensing_Scenes)*** | 2001 | 1 | 1476x256x145 [400,2500]nm*** | [URL](http://www.ehu.es/ccwintco/uploads/7/72/Botswana.mat) | [AVIRIS NASA](http://aviris.jpl.nasa.gov/). |
+| [Chikusei](http://vision.seas.harvard.edu/hyperspec/index.html)** | 2016| 1 | 2517x2335x128 [363,1018]nm | [URL](http://park.itc.u-tokyo.ac.jp/sal/hyperdata/Hyperspec_Chikusei_MATLAB.zip) | [Yokoya, N., & Iwasaki, A. (2016). Airborne hyperspectral data over Chikusei. Space Appl. Lab., Univ. Tokyo, Tokyo, Japan, Tech. Rep. SAL-2016-05-27.](http://park.itc.u-tokyo.ac.jp/sal/hyperdata/TechRepSAL20160527.pdf) |
+| [WHU-Hi](http://rsidea.whu.edu.cn/resource_WHUHi_sharing.htm)** | 2020 | 3 | varies | [All](http://rsidea-whu-hi.mikecrm.com/MqhjRPN) | [Zhong, Y., Hu, X., Luo, C., Wang, X., Zhao, J., & Zhang, L. (2020). WHU-Hi: UAV-borne hyperspectral with high spatial resolution (H2) benchmark datasets and classifier for precise crop identification based on deep convolutional neural network with CRF. Remote Sensing of Environment, 250, 112012.](https://arxiv.org/pdf/2012.13920.pdf) |
+
+Further remote sensing scenes can be found here: [rslab.ut.ac.ir/data](https://rslab.ut.ac.ir/data]).
+
+\* the first line represents the size of the spectral cubes (width **x** height **x** spectral bands), and the second line the wavelength interval of the dataset.
+
+\*\* script for automatic download and processing not implemented yet.
+
+\*\*\* some bands in between were removed.
+
 
 ## Methods
 
@@ -119,7 +145,7 @@ Code is available but wrapper is not implemented yet.
 
 ### Extensions
 
-HSI methods' extensions with code publicly available. These should be regarded as extensions to the base pipelines and not as a new methods. The extensions take a super-resolution image (output of the HSI method) together with the MS and HS images as inputs, and provide an improved super-resolution image as output. The wrappers for these extensions are not implemented in this repository yet.
+Extensions of HSI methods with publicly available code. These should be regarded as extensions to the base pipelines and not as a separate methods. These take as input a super-resolution image (output of the HSI method) together with the MS and HS images (original HSI method input); and provide as input an improved super-resolution image. The wrappers for these extensions are not implemented in this repository yet.
 
 | Method | Year | Code | Paper |
 | --- | --- | --- | --- |
