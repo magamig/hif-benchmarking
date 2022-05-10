@@ -24,7 +24,7 @@ function Out = LTMR_wrapper(HSI,MSI)
 [M,N,l] = size(MSI);
 
 sz = [M N];
-sf = M/n;
+sf = M/m;
 psf = fspecial('gaussian',7,2);
 fft_B = psf2otf(psf,sz);
 

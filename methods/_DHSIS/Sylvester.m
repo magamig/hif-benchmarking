@@ -22,5 +22,5 @@ temp  = PPlus_s(C30/(ds_r^2).*FBs,n_dr,n_dc); % The operation: temp=1/d*C5bar*Dv
  
 
 invQUF = C30-repmat(temp.*InvDI,[ds_r ds_r 1]).*FBCs1; % The operation: C5bar- temp*(\lambda_j d Im+\Sum_i=1^d Di^2)^{-1}Dv^H)
-VXF    = Q*reshape(invQUF,[nc*nc L])';
-Z = reshape(real(ifft2(reshape(VXF',[nr nc L   ]))),[nc*nc L])'; 
+VXF    = Q*reshape(invQUF,[nr*nc L])';
+Z = reshape(real(ifft2(reshape(VXF',[nr nc L   ]))),[nr*nc L])'; 

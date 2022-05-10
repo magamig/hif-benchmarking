@@ -75,8 +75,8 @@ C3=CCC+DTD\HR_HSI3;
 C30=fft2(reshape((Q\C3)',[nr nc L1   ])).*InvLbd;
 temp  = PPlus_s(C30/( sf^2).*FBs1,n_dr,n_dc);
 invQUF = C30-repmat(temp.*InvDI,[ sf  sf 1]).*FBCs1; % The operation: C5bar- temp*(\lambda_j d Im+\Sum_i=1^d Di^2)^{-1}Dv^H)
-VXF    = Q*reshape(invQUF,[nc*nc L1])';
-A = reshape(real(ifft2(reshape(VXF',[nr nc L1   ]))),[nc*nc L1])'; 
+VXF    = Q*reshape(invQUF,[nr*nc L1])';
+A = reshape(real(ifft2(reshape(VXF',[nr nc L1   ]))),[nr*nc L1])'; 
 %   [ZE1] = Sylvester(C1,psfY.B, sf,n_dr,n_dc,C3);  
     
 Zt=hyperConvert3D(D*A,nr, nc );

@@ -26,7 +26,7 @@ function Out = CSTF_wrapper(HSI,MSI)
 [M,N,l] = size(MSI);
 
 sz = [M N];
-sf = M/n;
+sf = M/m;
 s0 = sf/2;
 BW = fspecial('gaussian', [7 1], 2);
 BW1 = psf2otf(BW,[M 1]);

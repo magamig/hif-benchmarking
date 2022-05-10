@@ -14,12 +14,12 @@ GT_PATH = f'data/GT/{DATASET}'
 MS_PATH = f'data/MS/{DATASET}'
 HS_PATH = f'data/HS/{DATASET}/{DOWNSAMPLE}'
 
-os.system("wget https://www.cs.columbia.edu/CAVE/databases/multispectral/zip/complete_ms_data.zip")
+#os.system("wget https://www.cs.columbia.edu/CAVE/databases/multispectral/zip/complete_ms_data.zip")
 os.system("unzip complete_ms_data -d data/GT/aux/")
 os.makedirs(GT_PATH, exist_ok = True)
 os.system(f"cp -r data/GT/aux/*/* {GT_PATH}/")
 os.system("rm -r data/GT/aux/")
-os.system("rm complete_ms_data.zip")
+#os.system("rm complete_ms_data.zip")
 
 for hs_path in glob.iglob(f"{GT_PATH}/*/"):
     name = Path(hs_path).stem
@@ -35,7 +35,7 @@ for hs_path in glob.iglob(f"{GT_PATH}/*/"):
     # save both together as MAT file
     scipy.io.savemat(f'{GT_PATH}/{name}.mat', {"hsi": hsi, "msi": msi})
 
-os.system("rm -r {GT_PATH}/*/")
+os.system(f"rm -r {GT_PATH}/*/")
 os.makedirs(MS_PATH, exist_ok = True)
 os.makedirs(HS_PATH, exist_ok = True)
 
@@ -51,7 +51,7 @@ for mat_path in glob.iglob(f'{GT_PATH}/*.mat'):
     for i in range(hsi.shape[2]):
         # from np to Image
         img = Image.fromarray(hsi[:,:,i])
-        img = img.resize((hsi.shape[0]//DOWNSAMPLE, hsi.shape[1]//DOWNSAMPLE), Image.LANCZOS)
+        img = img.resize((hsi.shape[0]//DOWNSAMPLE, hsi.shape[1]//DOWNSAMPLE), Image.Resampling.LANCZOS)
         # from Image to np
         img = np.expand_dims(np.asarray(img), axis=2)
         hsi_downsampled = img if  hsi_downsampled is None else np.concatenate((hsi_downsampled, img), axis=2)

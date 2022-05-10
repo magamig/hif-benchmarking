@@ -77,8 +77,8 @@ C30=fft2(reshape((Q\C3)',[nr nc L   ])).*InvLbd;
 
 temp  = PPlus_s(C30/( sf^2).*FBs,n_dr,n_dc);
 invQUF = C30-repmat(temp.*InvDI,[ sf  sf 1]).*FBCs1; % The operation: C5bar- temp*(\lambda_j d Im+\Sum_i=1^d Di^2)^{-1}Dv^H)
-VXF    = Q*reshape(invQUF,[nc*nc L])';
-ZE = reshape(real(ifft2(reshape(VXF',[nr nc L   ]))),[nc*nc L])'; 
+VXF    = Q*reshape(invQUF,[nc*nr L])';
+ZE = reshape(real(ifft2(reshape(VXF',[nr nc L   ]))),[nc*nr L])'; 
 
 
 

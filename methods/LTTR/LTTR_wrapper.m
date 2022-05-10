@@ -45,7 +45,7 @@ Y_bar = hyperConvert2D(Y);
 [M,N,l] = size(Y);
 
 sz = [M N];
-sf = M/n;
+sf = M/m;
 psf = fspecial('gaussian',7,2);
 fft_B = psf2otf(psf,sz);
 K=3;

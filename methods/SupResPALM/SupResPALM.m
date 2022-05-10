@@ -38,9 +38,9 @@ end
 %if ndims(truth)==3
 %    truth = hyperConvert2d(truth);
 %end
-if ~(nargin==6)
-    h = sqrt(size(multi,2));
-end
+%if ~(nargin==6)
+%    h = sqrt(size(multi,2));
+%end
 
 maxIter = 200;
 epsilon = 0.0001;

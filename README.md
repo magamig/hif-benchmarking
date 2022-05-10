@@ -1,4 +1,4 @@
-# Hyperspectral Image Fusion Benchmarking
+<h1 align="center"> 🌇🌆 Hyperspectral Image Fusion Benchmarking 🏙🌃 </h1>
 
 **Comparison of the multispectral (MS) and hyperspectral (HS) image fusion techniques used for the spatial resolution enhancement of HS images.**
 
@@ -123,8 +123,8 @@ HSI methods' extensions with code publicly available. These should be regarded a
 
 | Method | Year | Code | Paper |
 | --- | --- | --- | --- |
-| [TVTVHS] | 2021 | [Python](https://github.com/marijavella/hs-sr-tvtv) | [Vella, M., Zhang, B., Chen, W., & Mota, J. F. (2021, September). Enhanced Hyperspectral Image Super-Resolution via RGB Fusion and TV-TV Minimization. In 2021 IEEE International Conference on Image Processing (ICIP) (pp. 3837-3841). IEEE.](https://arxiv.org/pdf/2106.07066.pdf) |
-| [DeepGrad] | 2022 | [Matlab](https://github.com/xiuheng-wang/Deep_gradient_HSI_superresolution) | [Wang, X., Chen, J., & Richard, C. (2022). Hyperspectral Image Super-resolution with Deep Priors and Degradation Model Inversion. arXiv preprint arXiv:2201.09851.](https://arxiv.org/pdf/2201.09851.pdf) |
+| TVTVHS | 2021 | [Python](https://github.com/marijavella/hs-sr-tvtv) | [Vella, M., Zhang, B., Chen, W., & Mota, J. F. (2021, September). Enhanced Hyperspectral Image Super-Resolution via RGB Fusion and TV-TV Minimization. In 2021 IEEE International Conference on Image Processing (ICIP) (pp. 3837-3841). IEEE.](https://arxiv.org/pdf/2106.07066.pdf) |
+| DeepGrad | 2022 | [Matlab](https://github.com/xiuheng-wang/Deep_gradient_HSI_superresolution) | [Wang, X., Chen, J., & Richard, C. (2022). Hyperspectral Image Super-resolution with Deep Priors and Degradation Model Inversion. arXiv preprint arXiv:2201.09851.](https://arxiv.org/pdf/2201.09851.pdf) |
 
 ## Metrics
 
