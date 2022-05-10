@@ -53,6 +53,9 @@ Compilation of publically available hyperspectral datasets. The datasets in bold
 
 Below, we list the publically available hyperspectral remote sensing scenes. The ones in italic were collected by the [GIC from EHU](http://www.ehu.eus/ccwintco/index.php/Hyperspectral_Remote_Sensing_Scenes).
 
+<details>
+<summary><b>Click to show list of Hyperspectral Remote Sensing Scenes</b></summary>
+
 | Dataset | Year | Qty | Resolution* | Download | Paper |
 | --- | --- | --- | --- | --- | --- |
 | *[Indian Pines](https://engineering.purdue.edu/~biehl/MultiSpec/hyperspectral.html)*** | 1992 | 1 | 145x145x220 [400,2500]nm | [URL](http://www.ehu.eus/ccwintco/uploads/2/22/Indian_pines.mat) | [Baumgardner, M. F., Biehl, L. L., & Landgrebe, D. A. (2015). 220 band aviris hyperspectral image data set: June 12, 1992 indian pine test site 3. Purdue University Research Repository, 10, R7RX991C.](https://purr.purdue.edu/publications/1947/1) / [AVIRIS NASA](http://aviris.jpl.nasa.gov/). |
@@ -61,10 +64,12 @@ Below, we list the publically available hyperspectral remote sensing scenes. The
 | *[Cuprite](https://aviris.jpl.nasa.gov/data/free_data.html)*** | 1998 | 1 | 512x614x224 [400,2500]nm*** | [URL](http://www.ehu.eus/ccwintco/uploads/7/7d/Cuprite_f970619t01p02_r02_sc03.a.rfl.mat) | [AVIRIS NASA](http://aviris.jpl.nasa.gov/). |
 | *[Pavia](http://www.ehu.eus/ccwintco/index.php/Hyperspectral_Remote_Sensing_Scenes)*** | 2008 | 2 | ?x?x103 [430,860]nm | [Centre](http://www.ehu.eus/ccwintco/uploads/e/e3/Pavia.mat) [University](http://www.ehu.eus/ccwintco/uploads/e/ee/PaviaU.mat) | Dataset provided by [Prof. Paolo Gamba](http://tlclab.unipv.it/sito_tlc/people.do?id=pgamba) from the [Telecommunications and Remote Sensing Laboratory, Pavia university (Italy)](http://tlclab.unipv.it/). |
 | *[Botswana](http://www.ehu.eus/ccwintco/index.php/Hyperspectral_Remote_Sensing_Scenes)*** | 2001 | 1 | 1476x256x145 [400,2500]nm*** | [URL](http://www.ehu.es/ccwintco/uploads/7/72/Botswana.mat) | [AVIRIS NASA](http://aviris.jpl.nasa.gov/). |
-| [Chikusei](http://vision.seas.harvard.edu/hyperspec/index.html)** | 2016| 1 | 2517x2335x128 [363,1018]nm | [URL](http://park.itc.u-tokyo.ac.jp/sal/hyperdata/Hyperspec_Chikusei_MATLAB.zip) | [Yokoya, N., & Iwasaki, A. (2016). Airborne hyperspectral data over Chikusei. Space Appl. Lab., Univ. Tokyo, Tokyo, Japan, Tech. Rep. SAL-2016-05-27.](http://park.itc.u-tokyo.ac.jp/sal/hyperdata/TechRepSAL20160527.pdf) |
+| [Chikusei](https://naotoyokoya.com/Download.html)** | 2016| 1 | 2517x2335x128 [363,1018]nm | [URL](http://park.itc.u-tokyo.ac.jp/sal/hyperdata/Hyperspec_Chikusei_MATLAB.zip) | [Yokoya, N., & Iwasaki, A. (2016). Airborne hyperspectral data over Chikusei. Space Appl. Lab., Univ. Tokyo, Tokyo, Japan, Tech. Rep. SAL-2016-05-27.](http://park.itc.u-tokyo.ac.jp/sal/hyperdata/TechRepSAL20160527.pdf) |
 | [WHU-Hi](http://rsidea.whu.edu.cn/resource_WHUHi_sharing.htm)** | 2020 | 3 | varies | [All](http://rsidea-whu-hi.mikecrm.com/MqhjRPN) | [Zhong, Y., Hu, X., Luo, C., Wang, X., Zhao, J., & Zhang, L. (2020). WHU-Hi: UAV-borne hyperspectral with high spatial resolution (H2) benchmark datasets and classifier for precise crop identification based on deep convolutional neural network with CRF. Remote Sensing of Environment, 250, 112012.](https://arxiv.org/pdf/2012.13920.pdf) |
 
-Further remote sensing scenes can be found here: [rslab.ut.ac.ir/data](https://rslab.ut.ac.ir/data]).
+Further remote sensing scenes can be found at [rslab.ut.ac.ir/data](https://rslab.ut.ac.ir/data]).
+
+</details>
 
 \* the first line represents the size of the spectral cubes (width **x** height **x** spectral bands), and the second line the wavelength interval of the dataset.
 
