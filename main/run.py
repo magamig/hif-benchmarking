@@ -15,8 +15,8 @@ ALL_METHODS = [
     "GLP",
     "GSOMP",
     "NSSR",
-    "SupResPALM", #
-    "CNNFUS", 
+    "SupResPALM",
+    "CNNFUS",
     "HySure", # slow
     "MAPSMM", # slow
     "LTTR", # slow
@@ -43,11 +43,11 @@ METHODS_PAPER_DIFF = [
     "GSOMP", # uses matrix T and downsample using matlab function "downsample"
     "NSSR", # uses matrix T and kernel info as input with custom parameters accordingly (uniform & gaussian kernels)
     "SupResPALM", # uses matrix T
-    "LTMR", # uses matrix T & removes noisy bands beforehand
-    "LTTR", # uses matrix T & removes noisy bands beforehand
+    "CNNFUS", # uses matrix T and kernel info as input (noise from demo not used)
     # "HySure", # OK but removes noisy bands beforehand
     # "MAPSMM", # OK
-    "CNNFUS", # uses matrix T and kernel info as input (noise from demo not used)
+    "LTTR", # uses matrix T & removes noisy bands beforehand
+    "LTMR", # uses matrix T & removes noisy bands beforehand
 ]
 SCALES = [4]
 
@@ -78,16 +78,15 @@ def main():
         for cm, method in enumerate(methods, start=1):
             for cs, scale in enumerate(SCALES, start=1):
                 for ci, img_path in enumerate(img_paths, start=1):
-                    if ci < 2:
-                        img = Path(img_path).stem
-                        print(f"dataset: {dataset} ({cd}/{len(DATASETS)}), method: {method} ({cm}/{len(methods)}), scale: {scale} ({cs}/{len(SCALES)}), img: {img}({ci}/{len(img_paths)})")
-                        hsi_path, msi_path, sri_path, gti_path = get_paths(dataset, method, scale, img, run_as_papers)
-                        if not os.path.exists(sri_path):
-                            if not run_as_papers:
-                                cmd = f'''hsi_path='{hsi_path}';msi_path='{msi_path}';sri_path='{sri_path}';{method}_run'''
-                            else:
-                                cmd = f'''gti_path='{gti_path}';sri_path='{sri_path}';scale={scale};{method}_paper_run'''
-                            matlabcmd(cmd, f"methods/{method}")
+                    img = Path(img_path).stem
+                    print(f"dataset: {dataset} ({cd}/{len(DATASETS)}), method: {method} ({cm}/{len(methods)}), scale: {scale} ({cs}/{len(SCALES)}), img: {img}({ci}/{len(img_paths)})")
+                    hsi_path, msi_path, sri_path, gti_path = get_paths(dataset, method, scale, img, run_as_papers)
+                    if not os.path.exists(sri_path):
+                        if not run_as_papers:
+                            cmd = f'''hsi_path='{hsi_path}';msi_path='{msi_path}';sri_path='{sri_path}';{method}_run'''
+                        else:
+                            cmd = f'''gti_path='{gti_path}';sri_path='{sri_path}';scale={scale};{method}_paper_run'''
+                        matlabcmd(cmd, f"methods/{method}")
 
 
 if __name__ == "__main__":
