@@ -9,10 +9,10 @@ import scipy.io
 from PIL import Image
 
 DATASET = 'CAVE'
-DOWNSAMPLE = int(sys.argv[1] if len(sys.argv) >= 2 else 4)
+SCALINGS = ([int(sys.argv[1])] if len(sys.argv) >= 2 else [4,8,16])
 GT_PATH = f'data/GT/{DATASET}'
 MS_PATH = f'data/MS/{DATASET}'
-HS_PATH = f'data/HS/{DATASET}/{DOWNSAMPLE}'
+HS_PATH = f'data/HS/{DATASET}'
 
 if not os.path.exists("complete_ms_data.zip"):
     os.system("wget https://www.cs.columbia.edu/CAVE/databases/multispectral/zip/complete_ms_data.zip")
@@ -38,7 +38,8 @@ for hs_path in glob.iglob(f"{GT_PATH}/*/"):
 
 os.system(f"rm -r {GT_PATH}/*/")
 os.makedirs(MS_PATH, exist_ok = True)
-os.makedirs(HS_PATH, exist_ok = True)
+for sf in SCALINGS:
+    os.makedirs(f'{HS_PATH}/{sf}', exist_ok = True)
 
 for mat_path in glob.iglob(f'{GT_PATH}/*.mat'):
     name = Path(mat_path).stem
@@ -48,12 +49,13 @@ for mat_path in glob.iglob(f'{GT_PATH}/*.mat'):
     # saving RGB
     scipy.io.savemat(f'{MS_PATH}/{name}.mat', {"msi": msi})
     # downsampling HS image
-    hsi_downsampled = None
-    for i in range(hsi.shape[2]):
-        # from np to Image
-        img = Image.fromarray(hsi[:,:,i])
-        img = img.resize((hsi.shape[0]//DOWNSAMPLE, hsi.shape[1]//DOWNSAMPLE), Image.Resampling.LANCZOS)
-        # from Image to np
-        img = np.expand_dims(np.asarray(img), axis=2)
-        hsi_downsampled = img if  hsi_downsampled is None else np.concatenate((hsi_downsampled, img), axis=2)
-    scipy.io.savemat(f'{HS_PATH}/{name}.mat', {"hsi": hsi_downsampled})
+    for sf in SCALINGS:
+        hsi_downsampled = None
+        for i in range(hsi.shape[2]):
+            # from np to Image
+            img = Image.fromarray(hsi[:,:,i])
+            img = img.resize((hsi.shape[0]//sf, hsi.shape[1]//sf), Image.LANCZOS)
+            # from Image to np
+            img = np.expand_dims(np.asarray(img), axis=2)
+            hsi_downsampled = img if hsi_downsampled is None else np.concatenate((hsi_downsampled, img), axis=2)
+        scipy.io.savemat(f'{HS_PATH}/{sf}/{name}.mat', {"hsi": hsi_downsampled})
