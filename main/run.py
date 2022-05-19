@@ -1,6 +1,8 @@
 import argparse
 import glob
 import os
+import sys
+import time
 from pathlib import Path
 
 DATASETS = [
@@ -54,8 +56,12 @@ SCALES = [4]
 
 
 def matlabcmd(cmd, path="."):
-    os.system(f'''/Applications/MATLAB_R20*.app/bin/matlab -nojvm -nodesktop -nodisplay -nosplash -batch "warning('off'); addpath(genpath('aux')); addpath(genpath('{path}')); {cmd}; exit;"''')
-
+    if sys.platform == "darwin":
+        os.system(f'''/Applications/MATLAB_R20*.app/bin/matlab -nojvm -nodesktop -nodisplay -nosplash -batch "warning('off'); addpath(genpath('aux')); addpath(genpath('{path}')); {cmd}; exit;"''')
+    elif sys.platform == "win32":
+        os.system(f'''matlab.exe -nojvm -nodesktop -nosplash -batch "warning('off'); addpath(genpath('aux')); addpath(genpath('{path}')); {cmd}; exit;"''')
+    elif sys.platform.startswith("linux"):  # could be "linux", "linux2", "linux3", ...
+        raise Exception("Script for linux not implemented yet.")
 
 def get_paths(dataset, method, scale, img, run_as_papers=False):
     hsi_path = f"data/HS/{dataset}/{scale}/{img}.mat"
@@ -83,11 +89,17 @@ def main():
                     print(f"dataset: {dataset} ({cd}/{len(DATASETS)}), method: {method} ({cm}/{len(methods)}), scale: {scale} ({cs}/{len(SCALES)}), img: {img}({ci}/{len(img_paths)})")
                     hsi_path, msi_path, sri_path, gti_path = get_paths(dataset, method, scale, img, run_as_papers)
                     if not os.path.exists(sri_path):
+                        tic = time.time()
                         if not run_as_papers:
                             cmd = f'''hsi_path='{hsi_path}';msi_path='{msi_path}';sri_path='{sri_path}';{method}_run'''
                         else:
                             cmd = f'''gti_path='{gti_path}';sri_path='{sri_path}';scale={scale};{method}_paper_run'''
                         matlabcmd(cmd, f"methods/{method}")
+                        toc = time.time()
+                        f = open(f'{os.path.dirname(sri_path)}/times.csv', "a+")
+                        f.write(f'{img},{toc-tic}\n')
+                        f.close()
+                        
 
 
 if __name__ == "__main__":
