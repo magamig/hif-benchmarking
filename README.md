@@ -50,6 +50,12 @@ Compilation of publically available hyperspectral datasets. The datasets in bold
 | [NUS](https://sites.google.com/site/hyperspectralcolorimaging/dataset/general-scenes)** | 2014 | 88 | ?×?x31 [400,700]nm | - | [Nguyen, R. M., Prasad, D. K., & Brown, M. S. (2014, September). Training-based spectral reconstruction from a single RGB image. In European Conference on Computer Vision (pp. 186-201). Springer, Cham.](https://link.springer.com/content/pdf/10.1007/978-3-319-10584-0_13.pdf) |
 | [iCVL](http://icvl.cs.bgu.ac.il/hyperspectral/)** | 2016 | 201 | 1392×1300x519 [400,1000]nm | [All](http://icvl.cs.bgu.ac.il/hyperspectral/) | [Arad, B., & Ben-Shahar, O. (2016, October). Sparse recovery of hyperspectral signal from natural RGB images. In European Conference on Computer Vision (pp. 19-34). Springer, Cham.](http://link.springer.com/chapter/10.1007/978-3-319-46478-7_2) |
 
+As a demo image, we include the hyperspectral measurement of a resolution chart ([ISO 12233:2017 Edge eSFR Inkjet chart](https://www.imatest.com/product/iso12233-2014/)) with a resolution of 512x512x108 and a wavelength interval from 403.09nm to 717.54nm, measured with a Specim IQ camera.
+
+![resolution-chart](aux/resolution-chart.png)
+
+Additionally, remote sensing hyperspectral scenes are also available and widely used accross the field.
+
 <details>
 <summary><b>Click to show list of Hyperspectral Remote Sensing Scenes</b></summary>
 
@@ -75,7 +81,6 @@ Further remote sensing scenes can be found at [rslab.ut.ac.ir/data](https://rsla
 \*\* script for automatic download and processing not implemented yet.
 
 \*\*\* some bands in between were removed.
-
 
 ## Methods
 

@@ -6,6 +6,7 @@ import time
 from pathlib import Path
 
 DATASETS = [
+    "ResolutionChart",
     "CAVE",
     "EHU",
     "Harvard",
