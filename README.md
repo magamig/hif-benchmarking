@@ -2,7 +2,7 @@
 
 **Comparison of the multispectral (MS) and hyperspectral (HS) image fusion techniques used for the spatial resolution enhancement of HS images.**
 
-![diagram](aux/diagram.png)
+![diagram](auxiliary/diagram.png)
 
 Existing hyperspectral imaging systems produce images that lack spatial resolution due to hardware limitations. Even with the proven efficacy of this technology in several computer vision tasks, the aforementioned limitation obstructs its applicability. Contrarily, conventional RGB images have a much larger resolution with just three spectra. Since the issue of low resolution images arises from hardware limitations, there have been several developments in software-based approaches to improve the spatial resolution of hyperspectral images.
 
@@ -52,7 +52,7 @@ Compilation of publically available hyperspectral datasets. The datasets in bold
 
 As a demo image, we include the hyperspectral measurement of a resolution chart ([ISO 12233:2017 Edge eSFR Inkjet chart](https://www.imatest.com/product/iso12233-2014/)) with a resolution of 512x512x108 and a wavelength interval from 403.09nm to 717.54nm, measured with a Specim IQ camera.
 
-![resolution-chart](aux/resolution-chart.png)
+![resolution-chart](auxiliary/resolution-chart.png)
 
 Additionally, remote sensing hyperspectral scenes are also available and widely used accross the field.
 
@@ -162,7 +162,7 @@ Code is available but wrapper is not implemented yet.
 
 Extensions of HSI methods with publicly available code. These should be regarded as extensions to the base pipelines and not as a separate methods. These take as input a super-resolution image (output of the HSI method) together with the MS and HS images (original HSI method input); and provide as input an improved super-resolution image. The wrappers for these extensions are not implemented in this repository yet.
 
-![extended-diagram](aux/extended-diagram.png)
+![extended-diagram](auxiliary/extended-diagram.png)
 
 
 | Method | Year | Code | Paper |
@@ -193,7 +193,7 @@ To evaluate the quality of the methods, the output of the superresolution method
 
 ## Requirements
 
-- `pip install -r aux/requirements.txt`
+- `pip install -r auxiliary/requirements.txt`
 - [SPAMS-2.6](http://thoth.inrialpes.fr/people/mairal/spams/downloads.html)
 - [MatConvNet](https://www.vlfeat.org/matconvnet/install/)
 
