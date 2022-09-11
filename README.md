@@ -25,8 +25,7 @@ This work allows for an **easy-to-use framework for testing and comparing existi
 If you use any part of this work, please use the following citation:
 
 ````
-Magalhães, Miguel. “Hyperspectral Image Fusion: A Comprehensive Review”. Master’s Programme in Imaging
-and Light in Extended Reality (IMLEX). MSc. thesis. KU Leuven, 2022.
+Magalhães, Miguel. “Hyperspectral Image Fusion: A Comprehensive Review”. Master’s Programme in Imaging and Light in Extended Reality (IMLEX). MSc. thesis. KU Leuven, 2022.
 ````
 
 ````
