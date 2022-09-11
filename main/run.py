@@ -12,19 +12,19 @@ DATASETS = [
     "Harvard",
 ]
 ALL_METHODS = [
-    "CNMF",
-    "FUSE",
-    "SFIM",
-    "GSA",
-    "GLP",
-    "GSOMP",
+    #"CNMF",
+    #"FUSE",
+    #"SFIM",
+    #"GSA",
+    #"GLP",
+    #"GSOMP",
     "NSSR",
-    "SupResPALM",
-    "CNNFUS",
-    "HySure", # slow
-    "MAPSMM", # slow
-    "LTTR", # slow
-    "LTMR", # slow
+    #"SupResPALM",
+    #"CNNFUS",
+    #"HySure", # slow
+    #"MAPSMM", # slow
+    #"LTTR", # slow
+    #"LTMR", # slow
     # "CSTF", # unstable - needs fixes
     # "BayesianSparse", # very slow
 ]
@@ -43,7 +43,7 @@ METHODS_PAPER_DIFF = [
     "FUSE", # uses matrix T and kernel info as input
     # "SFIM", # OK (via hypershaperning)
     # "GSA", # OK
-    # "GLP", # OK (via hypershaperning)
+    # "GLP", # OK (via hyparershaperning)
     "GSOMP", # uses matrix T and downsample using matlab function "downsample"
     "NSSR", # uses matrix T and kernel info as input with custom parameters accordingly (uniform & gaussian kernels)
     "SupResPALM", # uses matrix T
@@ -53,14 +53,14 @@ METHODS_PAPER_DIFF = [
     "LTTR", # uses matrix T & removes noisy bands beforehand
     "LTMR", # uses matrix T & removes noisy bands beforehand
 ]
-SCALES = [4]
+SCALES = [4,8,16]
 
 
 def matlabcmd(cmd, path="."):
     if sys.platform == "darwin":
-        os.system(f'''/Applications/MATLAB_R20*.app/bin/matlab -nojvm -nodesktop -nodisplay -nosplash -batch "warning('off'); addpath(genpath('aux')); addpath(genpath('{path}')); {cmd}; exit;"''')
+        os.system(f'''/Applications/MATLAB_R20*.app/bin/matlab -nojvm -nodesktop -nodisplay -nosplash -batch "warning('off'); addpath(genpath('auxiliary')); addpath(genpath('{path}')); {cmd}; exit;"''')
     elif sys.platform == "win32":
-        os.system(f'''matlab.exe -nojvm -nodesktop -nosplash -batch "warning('off'); addpath(genpath('aux')); addpath(genpath('{path}')); {cmd}; exit;"''')
+        os.system(f'''matlab.exe -nojvm -nodesktop -nosplash -batch "warning('off'); addpath(genpath('auxiliary')); addpath(genpath('{path}')); {cmd}; exit;"''')
     elif sys.platform.startswith("linux"):  # could be "linux", "linux2", "linux3", ...
         raise Exception("Script for linux not implemented yet.")
 
