@@ -10,6 +10,7 @@ This work allows for an **easy-to-use framework for testing and comparing existi
 
 ## Content
 
+* [Citation](#citation)
 * [Instructions](#instructions)
 * [Datasets](#datasets)
 * [Methods](#methods)
@@ -18,6 +19,25 @@ This work allows for an **easy-to-use framework for testing and comparing existi
     * [Extensions](#extensions)
 * [Metrics](#metrics)
 * [Requirements](#requirements)
+
+## Citation
+
+If you use any part of this work, please use the following citation:
+
+````
+Magalhães, Miguel. “Hyperspectral Image Fusion: A Comprehensive Review”. Master’s Programme in Imaging
+and Light in Extended Reality (IMLEX). MSc. thesis. KU Leuven, 2022.
+````
+
+````
+@mastersthesis{hif_review_2022,
+    title={Hyperspectral Image Fusion: A Comprehensive Review},
+    author={Miguel Magalhães},
+    year={2022},
+    school={KU Leuven},
+    note={Master’s Programme in Imaging and Light in Extended Reality (IMLEX)}
+}
+````
 
 ## Instructions
 
